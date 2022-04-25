@@ -1,0 +1,46 @@
+import React from "react";
+import { Redirect } from "react-router-dom";
+
+// Layout Types
+import { DefaultLayout} from "./layouts";
+
+// Route Views
+import Home from "./views/Home";
+import Login from "./views/Login";
+import Logout from "./views/Logout";
+import UploadExcel from "./views/UploadExcel";
+import UploadImages from "./views/UploadImages";
+
+export default [
+    {
+        path: "/",
+        exact: true,
+        layout: DefaultLayout,
+        component: () => <Redirect to="/home" />,
+    },
+    {
+        path: "/home",
+        exact: true,
+        layout: DefaultLayout,
+        component: Home,
+    },
+    {
+        path: "/logout",
+        exact: true,
+        layout: DefaultLayout,
+        component: Logout,
+    },
+    {
+        path: "/Upload-excel",
+        exact: true,
+        layout: DefaultLayout,
+        component: UploadExcel,
+    },
+    
+    {
+        path: "/Upload-images",
+        exact: true,
+        layout: DefaultLayout,
+        component: UploadImages,
+    },
+];
